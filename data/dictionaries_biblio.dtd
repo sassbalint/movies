@@ -1,0 +1,25 @@
+<!ELEMENT sourcelist ( source+ ) >
+<!ELEMENT source ( (pubauthor_grp | pubeditor_grp), pubdate, pubtitle, volume?, pubshort?, staff?, publisher, pubplace, series?, (pp | size | isbn | issn)*, remark* ) >
+<!ELEMENT pubeditor_grp ( pubeditor+ ) >
+<!ELEMENT pubauthor_grp ( pubauthor+ ) >
+<!ELEMENT pubeditor ( #PCDATA ) >
+<!ELEMENT pubauthor ( #PCDATA ) >
+<!ELEMENT pubshort ( #PCDATA ) >
+<!ELEMENT isbn ( #PCDATA | print )* >
+<!ELEMENT remark ( #PCDATA | print )* >
+<!ELEMENT staff ( #PCDATA | print )* >
+<!ELEMENT pubtitle ( #PCDATA ) >
+<!ELEMENT volume ( #PCDATA ) >
+<!ELEMENT print ( #PCDATA ) >
+<!ELEMENT pp ( #PCDATA | print )* >
+<!ELEMENT size ( #PCDATA | print )* >
+<!ELEMENT issn ( #PCDATA ) >
+<!ELEMENT series ( #PCDATA ) >
+<!ELEMENT publisher ( #PCDATA ) >
+<!ELEMENT pubplace ( #PCDATA ) >
+<!ELEMENT pubdate ( #PCDATA | print )* >
+
+<!ATTLIST pubeditor_grp type CDATA #IMPLIED >
+<!ATTLIST source id CDATA #REQUIRED >
+<!ATTLIST source id2 CDATA #IMPLIED >
+<!ATTLIST source group CDATA #IMPLIED >

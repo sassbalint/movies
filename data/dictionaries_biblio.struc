@@ -1,0 +1,28 @@
+database
+ sourcelist ( source+ ) >
+
+record
+ source ( (pubauthor_grp | pubeditor_grp), pubdate, pubtitle, volume?, pubshort?, staff?, publisher, pubplace, series?, (pp | size | isbn | issn)*, remark* ) >
+
+fields -- minden lehet ures!
+ source/@id
+ source/@id2
+ source/@group
+ pubeditor_grp ( pubeditor+ ) ***LIST
+ pubeditor_grp/@type
+ pubauthor_grp ( pubauthor+ ) ***LIST
+ pubshort
+ isbn
+ remark
+ staff
+ pubtitle
+ volume
+ print
+ pp
+ size
+ issn
+ series
+ publisher
+ pubplace
+ pubdate
+

@@ -1,0 +1,195 @@
+sourcelist {
+	background-color: rgb(247,247,247);
+}
+
+sourcelist:before {
+	display: block;
+	margin-top: 2.2em;
+	content:"Szótár bibliográfia";
+	font-size: large;
+	font-weight: bold;
+}
+
+source {
+	display: block;
+	width: auto;
+	margin-top: 1.2em;
+	padding: 1em;
+	border-style: solid;
+	border-width: thin;
+	border-color: rgb(60,60,90);
+	background-color: rgb(232,233,237);
+}
+
+source:before {
+	content: "ID: [" attr(id) "]; Eredeti ID: [" attr(id2) "]; Típus: [" attr(group) "]";
+	color: rgb(80,80,180);
+	display:block;
+}
+
+pubeditor_grp:before {
+	content: "Szerkesztő(k) [típus: " attr(type) "]: ";
+	font-weight: bold;
+}
+
+pubeditor_grp {
+	display: block;
+}
+
+pubauthor_grp:before {
+	content: "Szerző(k): ";
+	font-weight: bold;
+}
+
+pubauthor_grp {
+	display: block;
+}
+
+pubeditor {
+	display: block;
+}
+
+pubeditor:before {
+	content: " - ";
+	font-weight: bold;
+}
+
+pubauthor {
+	display: block;
+}
+
+pubauthor:before {
+	content: " - ";
+	font-weight: bold;
+}
+
+pubshort {
+	display: block;
+}
+
+pubshort:before {
+	content: "Hivatkozásban használt címalak: ";
+	font-weight: bold;
+}
+
+isbn {
+	display: block;
+}
+
+isbn:before {
+	content: "ISBN kód: ";
+	font-weight: bold;
+}
+
+issn {
+	display: block;
+}
+
+issn:before {
+	content: "ISSN kód: ";
+	font-weight: bold;
+}
+
+remark {
+	display: block;
+	}
+	
+remark:before {
+	content: "Megjegyzés: ";
+	font-weight: bold;
+	}
+
+staff {
+	display: block;
+}
+
+staff:before {
+	content: "Közreműködő(k): ";
+	font-weight: bold;
+}
+
+pubtitle {
+	display: block;
+}
+
+pubtitle:before {
+	content: "Cím: ";
+	font-weight: bold;
+}
+
+volume {
+	display: block;
+}
+
+volume:before {
+	content: "Kötet: ";
+	font-weight: bold;
+}
+
+print {
+	vertical-align: super;
+	font-size: 80%;
+}
+
+print:before {
+	content: "(";
+}
+
+print:after {
+	content: ")";
+}
+
+pp {
+	display: block;
+}
+
+pp:before {
+	content: "Oldalak száma: ";
+	font-weight: bold;
+}
+
+size {
+	display: block;
+}
+
+size:before {
+	content: "A terjedelemre vonatkozó további adatok: ";
+	font-weight: bold;
+}
+
+series {
+	display: block;
+}
+
+series:before {
+	content: "Sorozat: ";
+	font-weight: bold;
+}
+
+publisher {
+	display: block;
+}
+
+publisher:before {
+	content: "Kiadó: ";
+	font-weight: bold;
+}
+
+pubplace {
+	display: block;
+}
+
+pubplace:before {
+	content: "Kiadás helye: ";
+	font-weight: bold;
+}
+
+pubdate {
+	display: block;
+}
+
+pubdate:before {
+	content: "Kiadás dátuma: ";
+	font-weight: bold;
+}
+

@@ -1,10 +1,8 @@
-d3.csv("movies.csv").then(function (data) {
+d3.csv("dictbibl.csv").then(function (data) {
   // console.log(data);
 
   var movies = data;
-
   var button = d3.select("#button");
-
   var form = d3.select("#form");
 
   button.on("click", runEnter);
@@ -14,30 +12,50 @@ d3.csv("movies.csv").then(function (data) {
     d3.select("tbody").html("")
     d3.selectAll("p").classed('noresults', true).html("")
     d3.event.preventDefault();
+
     var inputElement = d3.select("#user-input");
     var inputValue = inputElement.property("value").toLowerCase().trim();
 
-    // console.log(inputValue.length);
-    // console.log(movies);
-    if (inputValue.length < 5){
-      d3.select("p").classed('noresults2', true).html("<center><strong>Please try using at least 5 characters to avoid too many results!</strong>")
-      inputValue = "Something to give no results"
-    }
-    var filteredData = movies.filter(movies => movies.actors.toLowerCase().trim().includes(inputValue));
-    // console.log(filteredData.length)
-    if (filteredData.length === 0 && inputValue !== "Something to give no results"){
-      d3.select("p").classed('noresults', true).html("<center><strong>No results. Please check your spelling!</strong>")
-    }
-    output = _.sortBy(filteredData, 'avg_vote').reverse()
+    noresults = d3.select("p").classed('noresults', true)
 
-    for (var i = 0; i < filteredData.length; i++) {
-      // console.log(output[i]['original_title'])
-      // console.log(output[i]['avg_vote'])
-      // d3.select("tbody>tr>td").text(output[i]['original_title']);
-      d3.select("tbody").insert("tr").html("<td>"+[i+1]+"</td>"+"<td>"+"<a href=https://www.imdb.com/title/"+output[i]['imdb_title_id']+" target='_blank'>"+(output[i]['original_title'])+"</a>"
-      + "</td>" +"<td>" +(output[i]['avg_vote'])+"</td>" +"<td>" +(output[i]['year'])+"</td>"  +"<td>" +(output[i]['director'])+"</td>"+"<td>" +(output[i]['description'])+"</td>") }
+    if (inputValue.length < 3){
+      noresults.html("Légyszi minimum 3 karaktert.")
+      return 0;
+    }
+
+    // ezt hogy lehet szebben? XXX
+    var filteredData = movies.filter(
+      movie =>
+      movie.isbn.toLowerCase().trim().includes(inputValue) ||
+      movie.pubtitle.toLowerCase().trim().includes(inputValue) ||
+      movie.pubshort.toLowerCase().trim().includes(inputValue) ||
+      movie.publisher.toLowerCase().trim().includes(inputValue) ||
+      movie.pubplace.toLowerCase().trim().includes(inputValue) ||
+      movie.pubdate.toLowerCase().trim().includes(inputValue)
+    );
+    length = filteredData.length
+
+    if (length === 0){
+      noresults.html("Nincs találat.")
+    } else if (length > 0) {
+      noresults.html(length + " találat.")
+    }
+
+    output = _.sortBy(filteredData, 'pubdate')
+    //output = filteredData
+
+    for (var i = 0; i < length; i++) {
+      d3.select("tbody").insert("tr").html(
+        "<td>" + [i+1] + "</td>" +
+        "<td>" + (output[i]['isbn']) + "</td>" +
+        "<td>" + (output[i]['pubtitle']) + "</td>" +
+        "<td>" + (output[i]['pubshort']) + "</td>" +
+        "<td>" + (output[i]['publisher']) + "</td>" +
+        "<td>" + (output[i]['pubplace']) + "</td>" +
+        "<td>" + (output[i]['pubdate']) + "</td>"
+      )
+    }
   };
+
   window.resizeTo(screen.width,screen.height)
-
-
 });
