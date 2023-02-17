@@ -7,9 +7,9 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
 
-  <title>Szótárbibliográfia</title>
+  <title>Magyar szótárbibliográfia</title>
 
-  <link rel="icon" type="image/x-icon" href="assets/img/film.svg" />
+  <link rel="icon" type="image/x-icon" href="assets/img/logo.ico" />
 
   <!-- Font Awesome icons (free version)-->
   <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
@@ -28,44 +28,63 @@
 <body>
  
   <header class="mas">
-    <div class="container h-100 align-items-center">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="mx-auto">
-            <br/><br/><br/>
+    <br/>
 
-            <h1>Szótárbibliográfia</h1>
+    <h1>
+      <img src="assets/img/logo.png"/>
+      <br/>
+      Magyar szótárbibliográfia
+    </h1>
 
-            <form id="form">
+    <br/>
 
-              <div class="input-group input-group-newsletter">
-                <input class="form-control" id="user-input"
-                  placeholder="keresés -- pl. szerző, cím, metaadatok szerint"
-                  aria-label="..." aria-describedby="submit-button">
-              </div>
-
-            </form>
-
-            <p class="noresults"/>
-
-            <table class="table" cellpadding="10">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">isbn</th>
-                  <th scope="col">pubtitle</th>
-                  <th scope="col">pubshort</th>
-                  <th scope="col">publisher</th>
-                  <th scope="col">pubplace</th>
-                  <th scope="col">pubdate</th>
-                </tr>
-              </thead>
-              <tbody>
-
-          </div>
-        </div>
+    <form id="form">
+      <div class="input-group input-group-newsletter">
+        <input class="form-control" id="user-input"
+          placeholder="keresés szerző, cím vagy egyéb metaadatok szerint"
+          aria-label="..." aria-describedby="submit-button">
       </div>
-    </div>
+    </form>
+
+    <br/>
+
+    <p class="noresults"/>
+
+    <br/>
+
+    <table class="table" cellpadding="10">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">kód</th>
+          <th scope="col">osztály</th>
+          <th scope="col">szerző</th>
+          <th scope="col">szerkesztő</th>
+          <th scope="col">megj</th>
+          <th scope="col">kiadás éve</th>
+          <th scope="col">cím</th>
+          <th scope="col">kötet</th>
+          <th scope="col">röv</th>
+          <th scope="col">csapat</th>
+          <th scope="col">kiadó</th>
+          <th scope="col">kiadás helye</th>
+          <th scope="col">sorozat</th>
+          <th scope="col">oldal</th>
+          <th scope="col">méret</th>
+          <th scope="col">ISBN</th>
+          <th scope="col">ISSN</th>
+          <th scope="col">megj</th>
+        </tr>
+      </thead>
+      <tbody/>
+    </table>
+
+    <br/>
+
+    <p style="font-size: 150%">
+    © 2023 • <a href="https://rilex.nytud.hu">Lexikai Tudásreprezentáció Kutatócsoport</a>
+    </p>
+
   </header>
 
   <script src="app.js"></script>

@@ -10294,8 +10294,9 @@ body {
   background-size: cover;
 }
 .mas h1 {
-  font-family: "Verdana";
-  font-size: 4.5rem;
+  font-family: "Palatino";
+  font-size: 3.5rem;
+  font-weight: bold;
   line-height: 4.5rem;
   letter-spacing: 0.1rem;
   padding-top: 20px;
