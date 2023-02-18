@@ -38,12 +38,16 @@
 
     <br/>
 
-    <form id="form">
-      <div class="input-group input-group-newsletter">
-        <input class="form-control" id="user-input"
-          placeholder="keresés szerző, cím vagy egyéb metaadatok szerint"
-          aria-label="..." aria-describedby="submit-button">
-      </div>
+    <form id="form" style="margin: 1em">
+      <center>
+        <input id="user-input" size="40"
+          placeholder="szerző, cím, egyéb adat..."/>
+<span hidden>
+        <br/>
+        <input type="radio" name="format" value="list" checked> lista
+        <input type="radio" name="format" value="table"> táblázat
+</span>
+      </center>
     </form>
 
     <br/>
@@ -52,6 +56,11 @@
 
     <br/>
 
+    <ol id="list-result"/>
+
+    <br/>
+
+<span hidden>
     <table class="table" cellpadding="10">
       <thead>
         <tr>
@@ -60,12 +69,12 @@
           <th scope="col">osztály</th>
           <th scope="col">szerző</th>
           <th scope="col">szerkesztő</th>
-          <th scope="col">megj</th>
+          <th scope="col"></th>
           <th scope="col">kiadás éve</th>
           <th scope="col">cím</th>
           <th scope="col">kötet</th>
           <th scope="col">röv</th>
-          <th scope="col">csapat</th>
+          <th scope="col">közreműködők</th>
           <th scope="col">kiadó</th>
           <th scope="col">kiadás helye</th>
           <th scope="col">sorozat</th>
@@ -73,13 +82,14 @@
           <th scope="col">méret</th>
           <th scope="col">ISBN</th>
           <th scope="col">ISSN</th>
-          <th scope="col">megj</th>
+          <th scope="col">megjegyzés</th>
         </tr>
       </thead>
-      <tbody/>
+      <tbody id="table-result"/>
     </table>
 
     <br/>
+</span>
 
     <p style="font-size: 150%">
     © 2023 • <a href="https://rilex.nytud.hu">Lexikai Tudásreprezentáció Kutatócsoport</a>
